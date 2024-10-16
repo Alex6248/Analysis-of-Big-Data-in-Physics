@@ -1,0 +1,77 @@
+from pptx import Presentation
+from pptx.util import Inches
+
+# Create a new PowerPoint presentation
+presentation = Presentation()
+
+# Slide 1: Title
+slide_1 = presentation.slides.add_slide(presentation.slide_layouts[0])
+title = slide_1.shapes.title
+title.text = "Syndrome CHARGE : Présentation médicale"
+subtitle = slide_1.placeholders[1]
+subtitle.text = "Introduction, définition, symptomatologie, bilans et prise en charge"
+
+# Slide 2: Introduction
+slide_2 = presentation.slides.add_slide(presentation.slide_layouts[1])
+title = slide_2.shapes.title
+title.text = "Introduction"
+content = slide_2.shapes.placeholders[1].text_frame
+content.text = ("Le syndrome CHARGE est une maladie génétique rare, décrite pour la première fois en 1979. "
+                "L'acronyme CHARGE fait référence à un ensemble de caractéristiques majeures affectant plusieurs systèmes.")
+
+# Slide 3: Définition
+slide_3 = presentation.slides.add_slide(presentation.slide_layouts[1])
+title = slide_3.shapes.title
+title.text = "Définition"
+content = slide_3.shapes.placeholders[1].text_frame
+content.text = ("Le syndrome CHARGE est causé par des mutations du gène CHD7, situé sur le chromosome 8. "
+                "Il affecte le développement embryonnaire, entraînant des anomalies multiples.")
+
+# Slide 4: Symptomatologie
+slide_4 = presentation.slides.add_slide(presentation.slide_layouts[1])
+title = slide_4.shapes.title
+title.text = "Symptomatologie"
+content = slide_4.shapes.placeholders[1].text_frame
+content.text = ("Le syndrome CHARGE se manifeste par :\n"
+                "- Colobome (malformation de l'œil)\n"
+                "- Hypoplasie des nerfs crâniens\n"
+                "- Atrésie des choanes (obstruction nasale)\n"
+                "- Retard de croissance et développement\n"
+                "- Anomalies génitourinaires\n"
+                "- Anomalies de l'oreille et surdité")
+
+# Slide 5: Bilan diagnostique
+slide_5 = presentation.slides.add_slide(presentation.slide_layouts[1])
+title = slide_5.shapes.title
+title.text = "Bilan diagnostique"
+content = slide_5.shapes.placeholders[1].text_frame
+content.text = ("Le diagnostic repose sur des examens cliniques et génétiques. Les bilans incluent :\n"
+                "- Évaluation ophtalmologique\n"
+                "- IRM pour les nerfs crâniens\n"
+                "- Scanner des voies respiratoires\n"
+                "- Bilan ORL\n"
+                "- Bilan endocrinologique\n"
+                "- Test génétique (mutation CHD7)")
+
+# Slide 6: Prise en charge
+slide_6 = presentation.slides.add_slide(presentation.slide_layouts[1])
+title = slide_6.shapes.title
+title.text = "Prise en charge"
+content = slide_6.shapes.placeholders[1].text_frame
+content.text = ("La prise en charge multidisciplinaire est nécessaire :\n"
+                "- Chirurgie des anomalies structurelles\n"
+                "- Soutien au développement psychomoteur\n"
+                "- Gestion des problèmes auditifs et visuels\n"
+                "- Suivi endocrinologique\n"
+                "- Support psychologique et éducatif")
+
+# Slide 7: Conclusion
+slide_7 = presentation.slides.add_slide(presentation.slide_layouts[1])
+title = slide_7.shapes.title
+title.text = "Conclusion"
+content = slide_7.shapes.placeholders[1].text_frame
+content.text = ("Le syndrome CHARGE est complexe et nécessite une approche diagnostique et thérapeutique coordonnée. "
+                "Les progrès en génétique offrent de nouvelles perspectives pour améliorer la prise en charge.")
+
+# Save the presentation
+presentation.save('Syndrome_CHARGE_Presentation.pptx')
